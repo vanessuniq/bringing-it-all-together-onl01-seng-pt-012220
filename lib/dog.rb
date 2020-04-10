@@ -53,6 +53,7 @@ class Dog
     SQL
     result = DB[:conn].execute(sql, name, breed)
     if result.empty?
+      attributes = {name: name, breed: breed}
       self.create(name, breed)
     else
       row = result[0]
