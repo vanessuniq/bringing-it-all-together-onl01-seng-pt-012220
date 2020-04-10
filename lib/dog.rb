@@ -54,7 +54,7 @@ class Dog
     result = DB[:conn].execute(sql, name, breed)
     if result.empty?
       attributes = {name: name, breed: breed}
-      self.create(name, breed)
+      self.create(attributes)
     else
       row = result[0]
       new_from_db(row)
